@@ -1,0 +1,157 @@
+/* start variable */
+:root {
+    --main-Color: #19c8fa;
+}
+
+/* end variable */
+/* start global rules */
+* {
+    --webkit-box-sizing: border-box;
+    --moz-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Open Sans", sans-serif;
+    background-color: #f0f0f0;
+}
+
+ul {
+    list-style: none;
+}
+
+.container1 {
+    padding-left: 15px ;
+    padding-right: 15px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* small */
+@media(min-width:768px) {
+    .container1 {
+        width: 750px;
+    }
+}
+
+/* medium */
+@media (min-width:992px) {
+    .container1 {
+        width: 970px;
+    }
+}
+
+/* large */
+@media (min-width:1200px) {
+    .container1 {
+        width: 1170px;
+    }
+}
+
+/* end global rules */
+/* start header */
+header {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    z-index: 2;
+}
+
+header .container1 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    min-height: 97px;
+}
+
+header .container1::after {
+    content: '';
+    position: absolute;
+    height: 1px;
+    background-color: #a2a2a2;
+    width: calc(100% - 30px);
+    bottom: 0;
+}
+
+/* ul{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+} */
+header nav {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+header nav ul {
+    display: flex;
+}
+
+header nav ul li a {
+    color: rgb(0, 0, 0);
+    display: block;
+    text-decoration: none;
+    font-size: 14px;
+    transition: 0.3s;
+    padding: 40px 10px;
+    position: relative;
+    z-index: 2;
+}
+header nav ul li{
+}
+header nav ul li a.active,
+header nav ul li a:hover {
+    color: var(--main-Color);
+    border-bottom: 1px solid var(--main-Color);
+}
+header nav .form{
+    width: 40px;
+    height: 30px;
+    position: relative;
+    margin-left: 30px;
+    border-left: 1px solid white;
+}
+header nav .form i{
+    color: white;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 0;
+}
+header nav .toggle-menu{
+    color: white;
+    font-size: 22px;
+}
+@media (min-width:768px){
+    header nav .toggle-menu{
+        display: none;
+    }
+}
+@media (max-width:767px){
+    header nav ul {
+        display: none;
+    }
+}
+header nav .toggle-menu:hover + ul{
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+header nav .toggle-menu:hover + ul li a{
+    padding: 15px;
+}
+/* end header */
